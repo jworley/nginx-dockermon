@@ -13,7 +13,7 @@ RUN wget http://nodejs.org/dist/v0.10.33/node-v0.10.33-linux-x64.tar.gz
 RUN mkdir -p ~/.node/ && tar -C ~/.node/ -xzvf node-v0.10.33-linux-x64.tar.gz --strip-components=1
 RUN rm node-v0.10.33-linux-x64.tar.gz && ln -s ~/.node/bin/node /usr/bin/node && ln -s ~/.node/bin/npm /usr/bin/npm
 
-RUN npm install -g dockermon
+RUN npm install -g dockermon@0.1.2
 
 RUN wget -O /usr/bin/shoreman https://github.com/hecticjeff/shoreman/raw/master/shoreman.sh && chmod u+x /usr/bin/shoreman
 
