@@ -8,7 +8,7 @@ files for nginx and reloads nginx when containers with exposed ports are started
 To run this container:
 
 ```
-$ docker run -d -p 80:80 -v  /var/run/docker.sock:/tmp/docker.sock jworley/nginx-dockermon
+$ docker run -d -p 80:80 -v  /var/run/docker.sock:/tmp/docker.sock jasonincode/nginx-dockermon
 ```
 
 Then start the contianers that are to be proxied with the environment variable VIRTUAL_HOST=app.contoso.com  

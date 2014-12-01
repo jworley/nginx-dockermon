@@ -17,12 +17,10 @@ RUN npm install -g dockermon@0.1.2
 
 RUN wget -O /usr/bin/shoreman https://github.com/hecticjeff/shoreman/raw/master/shoreman.sh && chmod u+x /usr/bin/shoreman
 
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-RUN sed -i 's/# server_names_hash_bucket/server_names_hash_bucket/g' /etc/nginx/nginx.conf
-
 RUN mkdir /app
 WORKDIR /app
 ADD . /app
+RUN cp /app/nginx.conf /etc/nginx/
 
 EXPOSE 80
 ENV DOCKER_HOST /tmp/docker.sock
